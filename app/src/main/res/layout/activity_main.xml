@@ -6,13 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/ar_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/monitor_icon"
+                android:src="@drawable/ic_desk_supplies"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                />
+
+            <ImageView
+                android:id="@+id/monitor_icon1"
+                android:src="@drawable/ic_desk_supplies"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="30dp"
+                />
+
+            <ImageView
+                android:id="@+id/monitor_icon2"
+                android:src="@drawable/ic_desk_supplies"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="30dp"
+                />
+
+            <ImageView
+                android:id="@+id/monitor_icon3"
+                android:src="@drawable/ic_desk_supplies"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="30dp"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
