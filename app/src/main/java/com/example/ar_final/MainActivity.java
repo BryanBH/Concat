@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        Log.v("myApp", "BUNDLE ARRIVED");
+        Bundle bundle= this.getIntent().getExtras();
+
         getSupportFragmentManager().addFragmentOnAttachListener(this);
 
         if (savedInstanceState == null) {
