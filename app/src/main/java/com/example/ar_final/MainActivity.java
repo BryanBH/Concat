@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements
     public void loadModels() {
         WeakReference<MainActivity> weakActivity = new WeakReference<>(this);
         ModelRenderable.builder()
-                .setSource(this, R.raw.monitor)
+                .setSource(this, R.raw.white_table)
                 .setIsFilamentGltf(true)
                 .setAsyncLoadEnabled(true)
                 .build()

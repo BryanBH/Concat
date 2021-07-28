@@ -5,5 +5,5 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="6dp"
-    android:text="Tiger"
+    android:text="Monitor"
     android:textAlignment="center" />
