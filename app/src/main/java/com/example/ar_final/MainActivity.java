@@ -34,6 +34,7 @@ import com.google.ar.sceneform.ux.BaseArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
 import java.lang.ref.WeakReference;
+import java.net.URL;
 
 public class MainActivity extends AppCompatActivity implements
 
@@ -57,6 +58,12 @@ public class MainActivity extends AppCompatActivity implements
 
         Log.v("myApp", "BUNDLE ARRIVED");
         Bundle bundle= this.getIntent().getExtras();
+
+        // loading bundle items
+        String modelName = bundle.getString("model");
+        int length = bundle.getInt("length");
+        int width = bundle.getInt("width");
+        int height = bundle.getInt("height");
 
         getSupportFragmentManager().addFragmentOnAttachListener(this);
 
@@ -111,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements
     public void loadModels() {
         WeakReference<MainActivity> weakActivity = new WeakReference<>(this);
         ModelRenderable.builder()
-                .setSource(this, R.raw.white_table)
+                .setSource(this,R.raw.round_table)
                 .setIsFilamentGltf(true)
                 .setAsyncLoadEnabled(true)
                 .build()

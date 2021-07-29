@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">AR_Final</string>
+
+    <string-array name="modelNames">
+        <item>Chair</item>
+        <item>Monitor</item>
+        <item>Round Table</item>
+        <item>White Table</item>
+    </string-array>
+    <string name="get_started">Get Started</string>
+    <string name="next">Next</string>
+    <string name="choose">Choose which object to place</string>
+    <string name="length">Enter Length:</string>
+    <string name="width">Enter Width:</string>
+    <string name="height">Enter Height:</string>
+
 </resources>

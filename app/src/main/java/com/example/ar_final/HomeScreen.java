@@ -16,19 +16,14 @@ public class HomeScreen extends AppCompatActivity {
 
         Button activity1_btn = (Button)findViewById(R.id.HomeScreen_button);
 
-        activity1_btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Log.v("myApp", "Button has been clicked");
+        activity1_btn.setOnClickListener(v -> {
+            Log.v("myApp", "Button has been clicked");
 
-                Intent intent=new Intent();
-                intent.setClass(HomeScreen.this, MainActivity.class);
-                Bundle bundle = new Bundle();
+            Intent intent =new Intent(HomeScreen.this, SizeSelection.class);
+            Bundle bundle = new Bundle();
 
-                intent.putExtras(bundle);
-                startActivity(intent);
-
-            }
+            intent.putExtras(bundle);
+            startActivity(intent);
         });
     }
 }

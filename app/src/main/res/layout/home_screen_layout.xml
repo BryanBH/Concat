@@ -29,7 +29,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
-        android:text="Get Started"
+        android:text="@string/get_started"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +43,6 @@
         android:layout_marginEnd="116dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cancat" />
+        app:srcCompat="@drawable/concat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
