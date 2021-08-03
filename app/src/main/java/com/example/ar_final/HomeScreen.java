@@ -19,7 +19,9 @@ public class HomeScreen extends AppCompatActivity {
         activity1_btn.setOnClickListener(v -> {
             Log.v("myApp", "Button has been clicked");
 
-            Intent intent =new Intent(HomeScreen.this, SizeSelection.class);
+            //Intent intent =new Intent(HomeScreen.this, SizeSelection.class);
+            Intent intent =new Intent(HomeScreen.this, MainActivity.class);
+
             Bundle bundle = new Bundle();
 
             intent.putExtras(bundle);

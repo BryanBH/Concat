@@ -1,5 +1,7 @@
 package com.example.ar_final;
 
+import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -47,11 +49,13 @@ public class MainActivity extends AppCompatActivity implements
         ArFragment.OnViewCreatedListener {
 
     private static final String TAG = "MyActivity";
-    private Button clear;
     private ArFragment arFragment;
     private Renderable model;
     private ViewRenderable viewRenderable;
-    boolean deleteOn = false;
+
+    private Button clear;
+    boolean deleteOn = false; //toggles the clear button being able to delete a model
+    int objectId; //global variable used to determine id of raw file
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,16 +67,20 @@ public class MainActivity extends AppCompatActivity implements
         Log.v("myApp", "BUNDLE ARRIVED");
         Bundle bundle= this.getIntent().getExtras();
 
-        // loading bundle items
-        String modelName = bundle.getString("model");
-        int length = bundle.getInt("length");
-        int width = bundle.getInt("width");
-        int height = bundle.getInt("height");
+        //TODO:USE BUNDLE ITEMS
+        //loading bundle items
+//        String modelName = bundle.getString("model");
+//        int length = bundle.getInt("length");
+//        int width = bundle.getInt("width");
+//        int height = bundle.getInt("height");
 
+        String objectUsed = "cube"; //TODO: REMOVE TEST VAR
+//        String objectUsed = modelName;
+        Resources res = getResources();
+        objectId = res.getIdentifier(objectUsed, "raw", getPackageName());
 
-        //on tap means it allows the next node touch to be deleted
-        //CHANGE TO TOGGLE??
-
+        //Initializes clear button
+        //When button is pressed the next model that gets tapped gets deleted
         clear = (Button) findViewById(R.id.clear_model_button);
         clear.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -85,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements
                             Node hitnode = hitTestResult.getNode();
                             hitnode.setParent(null);
                         }
-                        deleteOn = false;
+                        deleteOn = false; //reset the delete on so that you can still tap on objecs
                     }
                 });
 
@@ -136,11 +144,11 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     //model source handled here
-
     public void loadModels() {
         WeakReference<MainActivity> weakActivity = new WeakReference<>(this);
         ModelRenderable.builder()
-                .setSource(this,R.raw.round_table)
+                //.setSource(this,R.raw.monitor) TODO: REMOVE TEST VAR
+                .setSource(this, objectId)
                 .setIsFilamentGltf(true)
                 .setAsyncLoadEnabled(true)
                 .build()
@@ -183,21 +191,19 @@ public class MainActivity extends AppCompatActivity implements
         anchorNode.setParent(arFragment.getArSceneView().getScene());
 
         // Create the transformable model and add it to the anchor.
-
         TransformableNode model = new TransformableNode(arFragment.getTransformationSystem());
         model.getScaleController().setEnabled(false);
-
         model.setRenderable(this.model);
 
-
-        //units are in meters btw
+        //units are in meters
+        //Setting the min and max to large params
         model.getScaleController().setMinScale(0.001f);
         model.getScaleController().setMaxScale(200f);
 
-        //USER INPUTED X Y AND Z
-        float x = 0.1f;
-        float y = 0.9f;
-        float z = 0.1f;
+        //USER INPUTED X Y AND Z TODO: CHANGE FROM HARDCODE TEST TO USER INPUT FROM BUNDLE
+        float x = .01f;
+        float y = .01f;
+        float z = .01f;
         model.setLocalScale(new Vector3(x,y,z));
         model.getScaleController().setSensitivity(0); //remove pinch scaling
         model.setParent(anchorNode);
@@ -209,9 +215,6 @@ public class MainActivity extends AppCompatActivity implements
 
         Log.v("myApp", "HELLO MONITOR SIZE:" + renderableSize.toString());
 
-        //Log.i(TAG, "MONITOR SIZE: " + renderableSize.toString());
-
-
 //        Node titleNode = new Node();
 //        titleNode.setParent(model);
 //        titleNode.setEnabled(false);
@@ -219,8 +222,5 @@ public class MainActivity extends AppCompatActivity implements
 //        titleNode.setRenderable(viewRenderable);
 //        titleNode.setEnabled(true);
     }
-
-
-
 
 }

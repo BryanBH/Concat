@@ -42,6 +42,7 @@ public class SizeSelection extends AppCompatActivity {
             int width = Integer.parseInt(editWidth.getText().toString());
             int height = Integer.parseInt(editHeight.getText().toString());
 
+            //pass in selected object
             Bundle bundle = new Bundle();
             bundle.putString("model",model);
             bundle.putInt("length",length);
@@ -51,7 +52,7 @@ public class SizeSelection extends AppCompatActivity {
             textView.setText("Model: "+ model + "\nlength: "+ length+" " + "width: "+width+ " " + "height: " +height);
 
             intent.putExtras(bundle);
-            //startActivity(intent);
+            startActivity(intent);
         });
     }
 }
