@@ -2,33 +2,40 @@ package com.example.ar_final;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SizeSelection extends AppCompatActivity {
+public class SizeSelection extends AppCompatActivity implements  AdapterView.OnItemSelectedListener{
 
     private Spinner dropdown;
-    private Button btn;
-    private TextView textView;
+    private ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.size_selection);
 
+        // get imageview
+        imageView = findViewById(R.id.imageView);
+        imageView.setImageResource(R.drawable.chair);
+
         // get the spinner from the xml
-        dropdown = (Spinner) findViewById(R.id.spinner);
-        textView = (TextView) findViewById(R.id.test);
+        dropdown = findViewById(R.id.spinner);
         //create an adapter to describe how the items are displayed
         ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,getResources().getStringArray(R.array.modelNames));
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         // set the spinner adapter to the previously created one
         dropdown.setAdapter(adapter);
+        dropdown.setOnItemSelectedListener(this);
 
-        btn = (Button) findViewById(R.id.sizeSelectionBtn);
+        Button btn = findViewById(R.id.sizeSelectionBtn);
+        // Next button which bundles info and sends to main activity
         btn.setOnClickListener(v -> {
             Intent intent = new Intent(SizeSelection.this, MainActivity.class);
             int index = dropdown.getSelectedItemPosition();
@@ -42,17 +49,41 @@ public class SizeSelection extends AppCompatActivity {
             int width = Integer.parseInt(editWidth.getText().toString());
             int height = Integer.parseInt(editHeight.getText().toString());
 
-            //pass in selected object
+            // pass in selected object
             Bundle bundle = new Bundle();
             bundle.putString("model",model);
             bundle.putInt("length",length);
             bundle.putInt("width",width);
             bundle.putInt("height",height);
 
-            textView.setText("Model: "+ model + "\nlength: "+ length+" " + "width: "+width+ " " + "height: " +height);
-
             intent.putExtras(bundle);
             startActivity(intent);
         });
     }
+
+    // dropdown on item selected to update imageview with respective model image
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        // used for testing textView.setText(text);
+        switch (text) {
+            case "Kitchen Chair":
+                imageView.setImageResource(R.drawable.chair);
+                break;
+            case "Monitor":
+                imageView.setImageResource(R.drawable.monitor);
+                break;
+            case "Round Table":
+                imageView.setImageResource(R.drawable.round_table);
+                break;
+            case "Cube":
+                imageView.setImageResource(R.drawable.cube);
+                break;
+            case "Sphere":
+                imageView.setImageResource(R.drawable.sphere);
+                break;
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) { }
 }

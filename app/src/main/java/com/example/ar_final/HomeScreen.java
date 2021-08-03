@@ -20,7 +20,7 @@ public class HomeScreen extends AppCompatActivity {
             Log.v("myApp", "Button has been clicked");
 
             //Intent intent =new Intent(HomeScreen.this, SizeSelection.class);
-            Intent intent =new Intent(HomeScreen.this, MainActivity.class);
+            Intent intent =new Intent(HomeScreen.this, SizeSelection.class);
 
             Bundle bundle = new Bundle();
 

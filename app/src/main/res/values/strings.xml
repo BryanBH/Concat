@@ -1,17 +1,19 @@
 <resources>
-    <string name="app_name">AR_Final</string>
+    <string name="app_name">Concat</string>
 
     <string-array name="modelNames">
-        <item>Chair</item>
+        <item>Kitchen Chair</item>
         <item>Monitor</item>
         <item>Round Table</item>
-        <item>White Table</item>
+<!--        <item>White Table</item>-->
+        <item>Cube</item>
+        <item>Sphere</item>
     </string-array>
     <string name="get_started">Get Started</string>
     <string name="next">Next</string>
     <string name="choose">Choose which object to place</string>
-    <string name="length">Enter Length:</string>
-    <string name="width">Enter Width:</string>
-    <string name="height">Enter Height:</string>
+    <string name="length">Enter Length (In):</string>
+    <string name="width">Enter Width (In):</string>
+    <string name="height">Enter Height (In):</string>
 
 </resources>

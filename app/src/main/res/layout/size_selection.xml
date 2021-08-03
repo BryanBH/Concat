@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,11 +10,12 @@
         android:layout_height="28dp"
         android:layout_gravity="center"
         android:layout_marginTop="36dp"
-        android:background="#CACACA"
+        android:background="#F1F0F0"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/sizeSelectionBtn"
@@ -40,56 +40,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView"
         android:layout_width="237dp"
         android:layout_height="185dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseLabel"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/test"
-        android:layout_width="219dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sizeSelectionBtn"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/widthInput"
-        android:layout_width="88dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:inputType="numberSigned"
-        app:layout_constraintStart_toEndOf="@+id/width"
-        app:layout_constraintTop_toBottomOf="@+id/lengthInput" />
-
-    <TextView
-        android:id="@+id/length"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/length"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/chooseLabel" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/lengthInput"
-        android:layout_width="88dp"
-        android:layout_height="20dp"
+        android:layout_width="68dp"
+        android:layout_height="42dp"
         android:layout_marginTop="20dp"
         android:inputType="numberSigned"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintHorizontal_bias="0.682"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
@@ -98,17 +66,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="52dp"
         android:text="@string/width"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/length" />
 
+    <TextView
+        android:id="@+id/length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/length"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/widthInput"
+        android:layout_width="68dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:inputType="numberSigned"
+        app:layout_constraintStart_toEndOf="@+id/width"
+        app:layout_constraintTop_toBottomOf="@+id/lengthInput" />
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/heightInput"
-        android:layout_width="88dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="68dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="numberSigned"
         app:layout_constraintStart_toEndOf="@+id/height"
@@ -118,9 +108,10 @@
         android:id="@+id/height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="44dp"
         android:text="@string/height"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/width" />
 
