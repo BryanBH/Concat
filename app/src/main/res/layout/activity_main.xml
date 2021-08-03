@@ -20,6 +20,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/clear_model_button"
+                android:text="Clear Objects"
+            />
+
             <ImageView
                 android:id="@+id/monitor_icon"
                 android:src="@drawable/ic_desk_supplies"
