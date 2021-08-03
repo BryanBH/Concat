@@ -1,5 +1,6 @@
 package com.example.ar_final;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements
     private ViewRenderable viewRenderable;
 
     private Button clear;
+    private Button back;
+
     boolean deleteOn = false; //toggles the clear button being able to delete a model
     int objectId; //global variable used to determine id of raw file
 
@@ -99,6 +102,22 @@ public class MainActivity extends AppCompatActivity implements
 
              }
         });
+
+        back = (Button) findViewById(R.id.back_button);
+        back.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainActivity.this, SizeSelection.class);
+
+                Bundle bundle = new Bundle();
+
+                //TODO:return class + dimensions back to the size selecction screen
+
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
 
          getSupportFragmentManager().addFragmentOnAttachListener(this);
 

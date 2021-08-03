@@ -14,52 +14,31 @@
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="197dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/clear_model_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/clear_model_button"
-                android:text="Clear Objects"
-            />
+                android:text="Clear Objects" />
 
-            <ImageView
-                android:id="@+id/monitor_icon"
-                android:src="@drawable/ic_desk_supplies"
+            <Button
+                android:id="@+id/back_button"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                />
+                android:layout_height="wrap_content"
+                 android:text="Back" />
 
-            <ImageView
-                android:id="@+id/monitor_icon1"
-                android:src="@drawable/ic_desk_supplies"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingRight="30dp"
-                />
-
-            <ImageView
-                android:id="@+id/monitor_icon2"
-                android:src="@drawable/ic_desk_supplies"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingRight="30dp"
-                />
-
-            <ImageView
-                android:id="@+id/monitor_icon3"
-                android:src="@drawable/ic_desk_supplies"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:paddingRight="30dp"
-                />
-
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="151dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Current Object:" />
 
 
         </LinearLayout>
