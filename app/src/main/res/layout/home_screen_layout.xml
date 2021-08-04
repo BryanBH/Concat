@@ -4,23 +4,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/homebackground">
 <!--    tools:context="edu.wit.mobileapp.activityswitch.Activity1">-->
 
     <TextView
         android:id="@+id/HomeScreen_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="49dp"
-        android:text="HomeScreen"
-        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:text="The Furniture Solution."
+        android:typeface="monospace"
+        android:textColor="@color/white"
         android:textSize="18sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.08" />
 
     <Button
         android:id="@+id/HomeScreen_button"
@@ -29,6 +33,9 @@
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
+        app:backgroundTint="@null"
+        android:background="@color/white"
+        android:textColor="@android:color/black"
         android:text="@string/get_started"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -40,9 +47,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginEnd="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/concat" />
+        app:srcCompat="@drawable/concatrounded" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
