@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -69,16 +70,26 @@ public class MainActivity extends AppCompatActivity implements
 
         Log.v("myApp", "BUNDLE ARRIVED");
         Bundle bundle= this.getIntent().getExtras();
+        //String modelName = bundle.getString("model");
+
 
         //TODO:USE BUNDLE ITEMS
         //loading bundle items
-//        String modelName = bundle.getString("model");
-//        int length = bundle.getInt("length");
-//        int width = bundle.getInt("width");
-//        int height = bundle.getInt("height");
+        String modelName = bundle.getString("model");
+        int length = bundle.getInt("length");
+        int width = bundle.getInt("width");
+        int height = bundle.getInt("height");
+
+        Log.v("myApp", "Chosen Model: " + modelName);
+        Log.v("myApp", "Length: " + length);
+        Log.v("myApp", "Width: " + width);
+        Log.v("myApp", "Height: " + height);
+
+        TextView chosenObjectTV = (TextView) findViewById(R.id.ChosenObject);
+        chosenObjectTV.setText(modelName);
 
         String objectUsed = "cube"; //TODO: REMOVE TEST VAR
-//        String objectUsed = modelName;
+        //String objectUsed = modelName;
         Resources res = getResources();
         objectId = res.getIdentifier(objectUsed, "raw", getPackageName());
 

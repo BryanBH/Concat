@@ -15,5 +15,6 @@
     <string name="length">Enter Length (In):</string>
     <string name="width">Enter Width (In):</string>
     <string name="height">Enter Height (In):</string>
+    <string name="currentobject">CURRENT OBJECT</string>
 
 </resources>
