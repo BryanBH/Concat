@@ -1,6 +1,7 @@
 package com.example.ar_final;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,7 +24,7 @@ public class SizeSelection extends AppCompatActivity implements  AdapterView.OnI
 
         // get imageview
         imageView = findViewById(R.id.imageView);
-        imageView.setImageResource(R.drawable.chair);
+        imageView.setImageResource(R.drawable.kitchenchair);
 
         // get the spinner from the xml
         dropdown = findViewById(R.id.spinner);
@@ -64,24 +65,16 @@ public class SizeSelection extends AppCompatActivity implements  AdapterView.OnI
     // dropdown on item selected to update imageview with respective model image
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
-        // used for testing textView.setText(text);
-        switch (text) {
-            case "Kitchen Chair":
-                imageView.setImageResource(R.drawable.chair);
-                break;
-            case "Monitor":
-                imageView.setImageResource(R.drawable.monitor);
-                break;
-            case "Round Table":
-                imageView.setImageResource(R.drawable.round_table);
-                break;
-            case "Cube":
-                imageView.setImageResource(R.drawable.cube);
-                break;
-            case "Sphere":
-                imageView.setImageResource(R.drawable.sphere);
-                break;
-        }
+
+        //takes the text from the drop down menu and parses it into lower case and remove spaces
+        text = text.toLowerCase();
+        text = text.replaceAll("\\s+","");
+
+        //looks inside the resource folder for matching words
+        Resources res = getResources();
+        int objectId = res.getIdentifier(text, "drawable", getPackageName());
+        imageView.setImageResource(objectId);
+
     }
 
     @Override

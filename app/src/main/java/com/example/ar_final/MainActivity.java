@@ -120,10 +120,15 @@ public class MainActivity extends AppCompatActivity implements
             public void onClick(View v) {
                 Intent intent =new Intent(MainActivity.this, SizeSelection.class);
 
+
+                //TODO:return class + dimensions back to the size selection screen
                 Bundle bundle = new Bundle();
+//                bundle.putString("model",model);
+//                bundle.putInt("length",length);
+//                bundle.putInt("width",width);
+//                bundle.putInt("height",height);
 
-                //TODO:return class + dimensions back to the size selecction screen
-
+                intent.putExtras(bundle);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
