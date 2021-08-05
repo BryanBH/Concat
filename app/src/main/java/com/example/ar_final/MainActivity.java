@@ -110,10 +110,10 @@ public class MainActivity extends AppCompatActivity implements
                         if (hitTestResult.getNode() != null && deleteOn == true) {
                             Node hitnode = hitTestResult.getNode();
                             hitnode.setParent(null);
-                            clear.setBackgroundColor(Color.RED);
-                         }
+                          }
                         deleteOn = false; //reset the delete on so that you can still tap on objects
                         clear.setText("Clear off");
+                        clear.setBackgroundColor(Color.RED);
 
                     }
                 });
