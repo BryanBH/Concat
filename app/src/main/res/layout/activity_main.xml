@@ -28,7 +28,7 @@
                 app:backgroundTint="@null"
                 android:background="#ffff0000"
                 android:textColor="@android:color/black"
-                android:text="Clear Objects" />
+                android:text="Clear Off" />
 
             <Button
                 android:id="@+id/back_button"

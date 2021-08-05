@@ -2,6 +2,7 @@ package com.example.ar_final;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -99,15 +100,21 @@ public class MainActivity extends AppCompatActivity implements
         clear.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 deleteOn = true;
+                clear.setText("Clear on");
+                clear.setBackgroundColor(Color.BLUE);
                 arFragment.getArSceneView().getScene().addOnPeekTouchListener(new Scene.OnPeekTouchListener() {
                     @Override
                     public void onPeekTouch(HitTestResult hitTestResult, MotionEvent motionEvent) {
                         if (hitTestResult.getNode() != null && deleteOn == true) {
                             Node hitnode = hitTestResult.getNode();
                             hitnode.setParent(null);
-                        }
-                        deleteOn = false; //reset the delete on so that you can still tap on objecs
+                            clear.setBackgroundColor(Color.RED);
+                         }
+                        deleteOn = false; //reset the delete on so that you can still tap on objects
+                        clear.setText("Clear off");
+
                     }
                 });
 
@@ -123,14 +130,20 @@ public class MainActivity extends AppCompatActivity implements
 
                 //TODO:return class + dimensions back to the size selection screen
                 Bundle bundle = new Bundle();
-//                bundle.putString("model",model);
-//                bundle.putInt("length",length);
-//                bundle.putInt("width",width);
-//                bundle.putInt("height",height);
+                bundle.putString("model",modelName);
+                bundle.putInt("length",length);
+                bundle.putInt("width",width);
+                bundle.putInt("height",height);
+
+                Log.v("myApp", "Sent to back");
+
+                Log.v("myApp", "Chosen Model: " + modelName);
+                Log.v("myApp", "Length: " + length);
+                Log.v("myApp", "Width: " + width);
+                Log.v("myApp", "Height: " + height);
 
                 intent.putExtras(bundle);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                 startActivity(intent);
             }
         });
 
