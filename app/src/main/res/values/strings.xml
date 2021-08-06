@@ -11,10 +11,13 @@
     </string-array>
     <string name="get_started">Get Started</string>
     <string name="next">Next</string>
+    <string name="back">Back</string>
     <string name="choose">Choose which object to place</string>
-    <string name="length">Enter Length (In):</string>
-    <string name="width">Enter Width (In):</string>
-    <string name="height">Enter Height (In):</string>
+    <string name="length">Enter Length (m):</string>
+    <string name="width">Enter Width (m):</string>
+    <string name="height">Enter Height (m):</string>
     <string name="currentobject">CURRENT OBJECT</string>
+    <string name="howToUse"> How to Use</string>
+
 
 </resources>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/floor">
@@ -16,18 +17,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        />
 
     <Button
         android:id="@+id/sizeSelectionBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="32dp"
-        app:backgroundTint="@null"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="16dp"
         android:background="@color/white"
-        android:textColor="@android:color/black"
         android:text="@string/next"
+        android:textColor="@android:color/black"
+        app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heightInput" />
 
@@ -61,11 +63,14 @@
         android:layout_height="42dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@android:color/white"
-        android:inputType="numberSigned"
+        android:inputType="numberDecimal|numberSigned"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.688"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        android:textColor="@color/white"
+
+        android:textColorHint="@color/white"/>
 
     <TextView
         android:id="@+id/width"
@@ -100,9 +105,10 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@android:color/white"
-        android:inputType="numberSigned"
+        android:inputType="numberDecimal|numberSigned"
         app:layout_constraintStart_toEndOf="@+id/width"
-        app:layout_constraintTop_toBottomOf="@+id/lengthInput" />
+        app:layout_constraintTop_toBottomOf="@+id/lengthInput"
+        android:textColor="@color/white"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/heightInput"
@@ -112,9 +118,10 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="@android:color/white"
         android:ems="10"
-        android:inputType="numberSigned"
+        android:inputType="numberDecimal|numberSigned"
         app:layout_constraintStart_toEndOf="@+id/height"
-        app:layout_constraintTop_toBottomOf="@+id/widthInput" />
+        app:layout_constraintTop_toBottomOf="@+id/widthInput"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/height"
@@ -128,5 +135,18 @@
         android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/width" />
+
+    <Button
+        android:id="@+id/sizeBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+        android:text="@string/back"
+        android:textColor="@android:color/black"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toStartOf="@+id/sizeSelectionBtn"
+        app:layout_constraintTop_toBottomOf="@+id/height" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -77,9 +77,9 @@ public class MainActivity extends AppCompatActivity implements
         //TODO:USE BUNDLE ITEMS
         //loading bundle items
         String modelName = bundle.getString("model");
-        int length = bundle.getInt("length");
-        int width = bundle.getInt("width");
-        int height = bundle.getInt("height");
+        double length = bundle.getDouble("length");
+        double width = bundle.getDouble("width");
+        double height = bundle.getDouble("height");
 
         Log.v("myApp", "Chosen Model: " + modelName);
         Log.v("myApp", "Length: " + length);
@@ -131,9 +131,9 @@ public class MainActivity extends AppCompatActivity implements
                 //TODO:return class + dimensions back to the size selection screen
                 Bundle bundle = new Bundle();
                 bundle.putString("model",modelName);
-                bundle.putInt("length",length);
-                bundle.putInt("width",width);
-                bundle.putInt("height",height);
+                bundle.putDouble("length",length);
+                bundle.putDouble("width",width);
+                bundle.putDouble("height",height);
 
                 Log.v("myApp", "Sent to back");
 

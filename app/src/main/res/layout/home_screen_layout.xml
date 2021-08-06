@@ -52,4 +52,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/concatrounded" />
 
+    <Button
+        android:id="@+id/howToUse"
+        android:layout_width="138dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:text="@string/howToUse"
+        android:textColor="@android:color/black"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HomeScreen_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
