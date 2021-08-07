@@ -38,5 +38,11 @@ public class HomeScreen extends AppCompatActivity {
             Intent htuIntent =  new Intent(HomeScreen.this,UserTutorial.class);
             startActivity(htuIntent);
         });
+
+        Button about_btn = findViewById(R.id.aboutPage);
+        about_btn.setOnClickListener(v -> {
+            Intent aboutIntent =  new Intent(HomeScreen.this,About.class);
+            startActivity(aboutIntent);
+        });
     }
 }

@@ -58,11 +58,26 @@
         android:layout_height="47dp"
         android:layout_marginStart="124dp"
         android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
         android:background="@color/white"
         android:text="@string/howToUse"
         android:textColor="@android:color/black"
         app:backgroundTint="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/HomeScreen_button" />
+
+    <Button
+        android:id="@+id/aboutPage"
+        android:layout_width="138dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:background="@color/white"
+        android:text="ABOUT"
+        android:textColor="@android:color/black"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/howToUse" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

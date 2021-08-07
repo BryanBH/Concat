@@ -31,7 +31,10 @@
         </activity>
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".UserTutorial" ></activity>
+        <activity android:name=".UserTutorial" >
+        </activity>
+        <activity android:name=".About" >
+        </activity>
 
         <!-- Indicates that app requires ARCore ("AR Required"). Causes the Google
    Play Store to download and install Google Play Services for AR along
