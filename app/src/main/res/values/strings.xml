@@ -13,9 +13,9 @@
     <string name="next">Next</string>
     <string name="back">Back</string>
     <string name="choose">Choose which object to place</string>
-    <string name="length">Enter Length (m):</string>
-    <string name="width">Enter Width (m):</string>
-    <string name="height">Enter Height (m):</string>
+    <string name="length">Enter Length (in):</string>
+    <string name="width">Enter Width (in):</string>
+    <string name="height">Enter Height (in):</string>
     <string name="currentobject">CURRENT OBJECT</string>
     <string name="howToUse"> How to Use</string>
 

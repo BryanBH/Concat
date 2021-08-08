@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private Button clear;
     private Button back;
+    private String globalModel;
 
     boolean deleteOn = false; //toggles the clear button being able to delete a model
     int objectId; //global variable used to determine id of raw file
@@ -74,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements
         //String modelName = bundle.getString("model");
 
 
-        //TODO:USE BUNDLE ITEMS
         //loading bundle items
         String modelName = bundle.getString("model");
         double length = bundle.getDouble("length");
@@ -89,9 +89,15 @@ public class MainActivity extends AppCompatActivity implements
         TextView chosenObjectTV = (TextView) findViewById(R.id.ChosenObject);
         chosenObjectTV.setText(modelName);
 
-        String objectUsed = "cube"; //TODO: REMOVE TEST VAR
-        //String objectUsed = modelName;
+        //parse object used for resource file searching
+        String objectUsed = modelName;
+        objectUsed = objectUsed.toLowerCase();
+        objectUsed = objectUsed.replaceAll("\\s+","");
+
+        globalModel = objectUsed;
+
         Resources res = getResources();
+
         objectId = res.getIdentifier(objectUsed, "raw", getPackageName());
 
         //Initializes clear button
@@ -122,13 +128,15 @@ public class MainActivity extends AppCompatActivity implements
         });
 
         back = (Button) findViewById(R.id.back_button);
+
+        //When back button is clicked the screen gets sent to size selection
+        //Bundle passes in current length width height and model name
         back.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(MainActivity.this, SizeSelection.class);
 
 
-                //TODO:return class + dimensions back to the size selection screen
                 Bundle bundle = new Bundle();
                 bundle.putString("model",modelName);
                 bundle.putDouble("length",length);
@@ -195,7 +203,6 @@ public class MainActivity extends AppCompatActivity implements
     public void loadModels() {
         WeakReference<MainActivity> weakActivity = new WeakReference<>(this);
         ModelRenderable.builder()
-                //.setSource(this,R.raw.monitor) TODO: REMOVE TEST VAR
                 .setSource(this, objectId)
                 .setIsFilamentGltf(true)
                 .setAsyncLoadEnabled(true)
@@ -243,15 +250,32 @@ public class MainActivity extends AppCompatActivity implements
         model.getScaleController().setEnabled(false);
         model.setRenderable(this.model);
 
-        //units are in meters
         //Setting the min and max to large params
         model.getScaleController().setMinScale(0.001f);
         model.getScaleController().setMaxScale(200f);
 
-        //USER INPUTED X Y AND Z TODO: CHANGE FROM HARDCODE TEST TO USER INPUT FROM BUNDLE
-        float x = .01f;
-        float y = .01f;
-        float z = .01f;
+        //USER INPUTED X Y AND Z TODO: CHANGE FROM HARDCODE TEST TO USER INPUT FROM BUNDLE;
+        float x;
+        float y;
+        float z;
+        Log.v("myApp", "Global Model: " + globalModel);
+
+        if (globalModel.equals("cube") || globalModel.equals("sphere")) {
+            x = 0.01f;
+            y = 0.01f; // default = 7.5 inches
+            z = 0.01f;
+        }else{
+            x = 1;
+            y = 1; //normal sized
+            z = 1;
+        }
+
+
+
+        Log.v("myApp", "Global Model X: " + x);
+        Log.v("myApp", "Global Model Y: " + y);
+        Log.v("myApp", "Global Model Z: " + z);
+
         model.setLocalScale(new Vector3(x,y,z));
         model.getScaleController().setSensitivity(0); //remove pinch scaling
         model.setParent(anchorNode);
@@ -259,16 +283,8 @@ public class MainActivity extends AppCompatActivity implements
 
 
         Box box = (Box) model.getRenderable().getCollisionShape();
-        Vector3 renderableSize = box.getSize();
 
-        Log.v("myApp", "HELLO MONITOR SIZE:" + renderableSize.toString());
 
-//        Node titleNode = new Node();
-//        titleNode.setParent(model);
-//        titleNode.setEnabled(false);
-//        titleNode.setLocalPosition(new Vector3(0.0f, 1.0f, 0.0f));
-//        titleNode.setRenderable(viewRenderable);
-//        titleNode.setEnabled(true);
     }
 
 }

@@ -51,7 +51,6 @@ public class SizeSelection extends AppCompatActivity implements  AdapterView.OnI
             Bundle bundleIn = this.getIntent().getExtras();
             //String modelName = bundle.getString("model");
 
-            //TODO:USE BUNDLE ITEMS
             //loading bundle items
             String modelName = bundleIn.getString("model");
             double lengthIn = bundleIn.getDouble("length");
@@ -74,6 +73,7 @@ public class SizeSelection extends AppCompatActivity implements  AdapterView.OnI
 
 
         }catch (Exception e){
+            Log.v("myApp", "Error Msg: " + e);
 
         }
 
