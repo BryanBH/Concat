@@ -269,19 +269,30 @@ public class MainActivity extends AppCompatActivity implements
         Log.v("myApp", "Global Model: " + globalModel);
 
         if (globalModel.equals("cube") || globalModel.equals("sphere")) {
-            x = 0.01f/7.05f;
-            y = 0.01f/7.05f; // default = 7 inches sets it to 1 inch
-            z = 0.01f/7.05f;
+            x = 0.01f/6.5f;
+            y = 0.01f/6.5f; // default = 7 inches sets it to 1 inch
+            z = 0.01f/6.5f;
 
             x = x*(float)widthIn;
             y = y*(float)heightIn;
             z = z*(float)lengthIn;
-        }else{
+        }else if (globalModel.equals("monitor")){
+
+            x = 1/29f;//normal sized //length = 29 inches
+            y = 1/13f; //normal height = 13 inches
+            z = 1;
+            Log.v("myApp", "Monitor inialized with dims " + x);
+
+            x = x*(float)widthIn;
+            y = y*(float)heightIn;
+            z = z*(float)lengthIn;
+
+        }
+        else{
             x = 1;
-            y = 1; //normal sized
+            y = 1;
             z = 1;
         }
-
 
 
 

@@ -104,15 +104,16 @@ public class SizeSelection extends AppCompatActivity implements  AdapterView.OnI
             bundle.putDouble("height",height);
             if(height <= 0|| width <= 0 || length <=0){
                 nextBtn.setText("Invalid input");
+
+                //adds a delay for user interaction
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        // Do something after 1.5s = 1500 ms
-                        nextBtn.setText("Next");
+                         nextBtn.setText("Next");
 
                     }
-                }, 1500);
+                }, 1200); //1200ms = 1.2 seconds
              }else {
                 nextIntent.putExtras(bundle);
                 startActivity(nextIntent);
