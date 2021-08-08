@@ -60,6 +60,10 @@ public class MainActivity extends AppCompatActivity implements
     private Button back;
     private String globalModel;
 
+
+    private double lengthIn;
+    private double widthIn;
+    private double heightIn;
     boolean deleteOn = false; //toggles the clear button being able to delete a model
     int objectId; //global variable used to determine id of raw file
 
@@ -81,13 +85,17 @@ public class MainActivity extends AppCompatActivity implements
         double width = bundle.getDouble("width");
         double height = bundle.getDouble("height");
 
+        lengthIn = length;
+        heightIn = height;
+        widthIn = width;
+
         Log.v("myApp", "Chosen Model: " + modelName);
         Log.v("myApp", "Length: " + length);
         Log.v("myApp", "Width: " + width);
         Log.v("myApp", "Height: " + height);
 
         TextView chosenObjectTV = (TextView) findViewById(R.id.ChosenObject);
-        chosenObjectTV.setText(modelName);
+        chosenObjectTV.setText(modelName + " L x W x H: " + length + "x" + width + "x" + height);
 
         //parse object used for resource file searching
         String objectUsed = modelName;
@@ -261,14 +269,19 @@ public class MainActivity extends AppCompatActivity implements
         Log.v("myApp", "Global Model: " + globalModel);
 
         if (globalModel.equals("cube") || globalModel.equals("sphere")) {
-            x = 0.01f;
-            y = 0.01f; // default = 7.5 inches
-            z = 0.01f;
+            x = 0.01f/7.05f;
+            y = 0.01f/7.05f; // default = 7 inches sets it to 1 inch
+            z = 0.01f/7.05f;
+
+            x = x*(float)widthIn;
+            y = y*(float)heightIn;
+            z = z*(float)lengthIn;
         }else{
             x = 1;
             y = 1; //normal sized
             z = 1;
         }
+
 
 
 
