@@ -18,11 +18,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
+import android.os.Handler;
 
 public class SizeSelection extends AppCompatActivity implements  AdapterView.OnItemSelectedListener{
 
     private Spinner dropdown;
     private ImageView imageView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,13 +102,26 @@ public class SizeSelection extends AppCompatActivity implements  AdapterView.OnI
             bundle.putDouble("length",length);
             bundle.putDouble("width",width);
             bundle.putDouble("height",height);
+            if(height <= 0|| width <= 0 || length <=0){
+                nextBtn.setText("Invalid input");
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Do something after 1.5s = 1500 ms
+                        nextBtn.setText("Next");
 
-            nextIntent.putExtras(bundle);
-            startActivity(nextIntent);
+                    }
+                }, 1500);
+             }else {
+                nextIntent.putExtras(bundle);
+                startActivity(nextIntent);
+            }
         });
 
         Button backBtn = findViewById(R.id.sizeBackButton);
         backBtn.setOnClickListener(v -> {
+
             Intent backIntent = new Intent(SizeSelection.this,HomeScreen.class);
             startActivity(backIntent);
         });
