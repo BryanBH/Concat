@@ -27,7 +27,7 @@ public class UserTutorial extends AppCompatActivity {
 
         textView = findViewById(R.id.explanation);
         textView.setText("Welcome to Concat! \n" +
-                "        Online shopping for furniture and other items can be difficult if you don’t know how well an item will fit, or look in a room.\n");
+                "Online shopping for furniture and other items can be difficult if you don’t know how well an item will fit, or look in a room.\n");
 
         // testing
         Bitmap item1Image = BitmapFactory.decodeResource(getResources(),R.drawable.concat);

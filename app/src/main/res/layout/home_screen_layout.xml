@@ -28,11 +28,10 @@
 
     <Button
         android:id="@+id/HomeScreen_button"
-        android:layout_width="wrap_content"
+        android:layout_width="138dp"
         android:layout_height="49dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
+        android:gravity="center_horizontal"
         app:backgroundTint="@null"
         android:background="@color/white"
         android:textColor="@android:color/black"
