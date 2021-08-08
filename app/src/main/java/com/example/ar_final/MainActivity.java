@@ -285,7 +285,7 @@ public class MainActivity extends AppCompatActivity implements
 
             x = x*(float)widthIn;
             y = y*(float)heightIn;
-            z = z*(float)lengthIn;
+           // z = z*(float)lengthIn;
 
         }
         else{

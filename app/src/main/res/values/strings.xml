@@ -2,12 +2,13 @@
     <string name="app_name">Concat</string>
 
     <string-array name="modelNames">
+        <item>Cube</item>
+        <item>Sphere</item>
         <item>Kitchen Chair</item>
         <item>Monitor</item>
         <item>Round Table</item>
 <!--        <item>White Table</item>-->
-        <item>Cube</item>
-        <item>Sphere</item>
+
     </string-array>
     <string name="get_started">Get Started</string>
     <string name="next">Next</string>
