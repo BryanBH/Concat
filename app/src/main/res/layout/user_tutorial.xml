@@ -20,7 +20,7 @@
         android:id="@+id/htuBackButton"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
-        android:background="@color/white"
+        android:background="@drawable/rounded_button_corners"
         android:text="@string/back"
         android:textColor="@android:color/black"
         app:backgroundTint="@null"

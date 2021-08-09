@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="600dp"
             app:backgroundTint="@null"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_corners"
             android:textColor="@android:color/black"
             android:text="@string/back"
             />
@@ -150,10 +150,11 @@
             android:layout_toRightOf="@+id/sizeBackButton"
             android:layout_marginLeft="25dp"
             app:backgroundTint="@null"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_corners"
             android:textColor="@android:color/black"
             android:text="@string/next"
-/>
+            />
+
     </RelativeLayout>
 
 

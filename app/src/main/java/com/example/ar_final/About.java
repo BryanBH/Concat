@@ -22,7 +22,7 @@ public class About extends AppCompatActivity {
 
         Log.v("Arrived!", "Made it to About!");
         textView = findViewById(R.id.aboutInfo);
-        textView.setText("Developed By: \n\n William Zhu\n Bryan Benjumea\n Rich Colorusso\n\n COMP3660\n\n Professor Jones Yu\n\n Wentworth Institute of Technology\n\n\n VERSION 1.0\n\n\n" +
+        textView.setText("Developed By:\n\n William Zhu\n Bryan Benjumea\n Rich Colorusso\n\n COMP3660\n\n Professor Jones Yu\n\n Wentworth Institute of Technology\n\n\n VERSION 1.0\n\n\n" +
                 "August 2021");
 
 

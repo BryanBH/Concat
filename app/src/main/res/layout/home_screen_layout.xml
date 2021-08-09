@@ -61,7 +61,7 @@
             android:layout_height="49dp"
             android:layout_marginTop="475dp"
             app:backgroundTint="@null"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_corners"
             android:textColor="@android:color/black"
             android:text="@string/get_started"
             />
@@ -73,7 +73,7 @@
             android:layout_below="@+id/HomeScreen_button"
             android:layout_marginTop="25dp"
             app:backgroundTint="@null"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_corners"
             android:textColor="@android:color/black"
             android:text="How To Use"
             />
@@ -85,7 +85,7 @@
             android:layout_below="@+id/howToUse"
             android:layout_marginTop="25dp"
             app:backgroundTint="@null"
-            android:background="@color/white"
+            android:background="@drawable/rounded_button_corners"
             android:textColor="@android:color/black"
             android:text="ABOUT"
             />
