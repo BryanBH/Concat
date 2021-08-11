@@ -1,4 +1,4 @@
-package com.example.ar_final;
+package edu.wit.concat;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -13,12 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
 import android.os.Handler;
+
+import edu.wit.concat.R;
 
 public class SizeSelection extends AppCompatActivity implements  AdapterView.OnItemSelectedListener{
 

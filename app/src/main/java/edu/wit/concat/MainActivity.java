@@ -1,9 +1,8 @@
-package com.example.ar_final;
+package edu.wit.concat;
 
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -18,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentOnAttachListener;
 
+import edu.wit.concat.R;
 import com.google.android.filament.ColorGrading;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.Config;
@@ -43,7 +43,6 @@ import com.google.ar.sceneform.ux.BaseArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
 import java.lang.ref.WeakReference;
-import java.net.URL;
 
 public class MainActivity extends AppCompatActivity implements
         FragmentOnAttachListener,

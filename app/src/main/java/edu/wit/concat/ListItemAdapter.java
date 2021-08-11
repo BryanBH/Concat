@@ -1,4 +1,4 @@
-package com.example.ar_final;
+package edu.wit.concat;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import edu.wit.concat.R;
 
 import java.util.List;
 

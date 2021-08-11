@@ -1,4 +1,4 @@
-package com.example.ar_final;
+package edu.wit.concat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.wit.concat.R;
 
 public class About extends AppCompatActivity {
 

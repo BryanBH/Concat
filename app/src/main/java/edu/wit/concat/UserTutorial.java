@@ -1,4 +1,4 @@
-package com.example.ar_final;
+package edu.wit.concat;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.wit.concat.R;
 
 import java.util.ArrayList;
 import java.util.List;
